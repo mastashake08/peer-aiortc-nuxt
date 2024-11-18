@@ -56,6 +56,10 @@ const callPeer = () => {
       localVideo.value.srcObject = stream;
 
       const call = peer.value.call(remotePeerId.value, stream);
+      call.on('stream', (remoteStream) => {
+         console.log(remoteStream)
+      });
+      console.log(call)
     })
     .catch((error) => {
       console.error('Error accessing media devices:', error);

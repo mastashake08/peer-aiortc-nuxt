@@ -1,0 +1,21 @@
+{
+  "name": "Nuxt 3 Dev Container",
+  "dockerFile": "Dockerfile",
+  "context": ".",
+  "postCreateCommand": "npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "vue.volar",
+        "vue.vscode-typescript-vue-plugin"
+      ]
+    }
+  },
+  "forwardPorts": [3000],
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ],
+  "remoteUser": "node"
+}
